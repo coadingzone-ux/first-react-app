@@ -1,0 +1,179 @@
+
+
+.task-card {
+    background-color: #fff;
+    border-radius: 12px; /* Slightly rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 320px; /* Fixed width for the card */
+    display: flex; /* To align the status bar and content */
+    overflow: hidden; /* Ensures the status bar doesn't break out */
+    position: relative; /* For positioning the close icon */
+    margin-bottom:10px ;
+}
+
+.card-status-bar {
+    width: 50px; /* Thickness of the status bar */
+    background-color: #e8bd90; /* Orange color for 'In Progress' */
+    /* You would change this based on status:
+       '#28a745' for Green (New/Completed)
+       '#dc3545' for Red (Overdue/Blocked)
+       '#6c757d' for Gray (Done)
+    */
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1; /* Allows content to take up remaining space */
+    position: relative; /* For positioning the close icon */
+}
+
+.close-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #a0a0a0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.2s ease-in-out;
+}
+
+.close-icon:hover {
+    color: #606060;
+}
+
+
+
+/* --- New / Updated CSS for the <select> dropdown --- */
+.status-select-wrapper {
+    position: relative;
+    display: inline-block;
+    border-radius: 20px; /* Pill shape */
+    border: 1px solid #e0e0e0;
+    overflow: hidden; /* Important to clip the native arrow if not hidden by appearance */
+    background-color: #f0f0f0; /* Default background */
+    transition: all 0.2s ease-in-out;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333; /* Default text color */
+}
+
+/* Dynamic background and text color based on selected status */
+.status-select-wrapper.pending {
+    background-color: #e6ffe6; /* Light green */
+    border-color: #4CAF50;
+    color: #333;
+}
+.status-select-wrapper.in-progress {
+    background-color: #fff4e6; /* Light orange */
+    border-color: #F7A040;
+    color: #333;
+}
+.status-select-wrapper.completed {
+    background-color: #c5f5cd; /* Light red */
+    border-color: #35dc89;
+    color: #0e0e0e;
+}
+
+
+.status-select {
+    /* Hide default browser appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent; /* Make it transparent so wrapper background shows */
+    border: none;
+    padding: 6px 30px 6px 12px; /* Adjust padding for custom arrow */
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    outline: none; /* Remove blue outline on focus */
+    width: 100%;
+    color: inherit; /* Inherit color from wrapper */
+}
+
+/* Style for the options within the select (can be harder to style uniformly) */
+.status-select option {
+    background-color: #fff;
+    color: #333;
+    padding: 5px; /* Does not work on all browsers */
+}
+
+/* Custom arrow for the select box */
+.custom-select-arrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 12px;
+    pointer-events: none; /* Allows clicks to pass through to the select */
+}
+
+.status-select-wrapper:hover {
+    filter: brightness(0.95); /* Slightly darken on hover */
+}
+
+
+
+
+
+
+
+.card-title {
+    font-size: 24px;
+    font-weight: 700; /* Bold */
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-overflow: ellipsis;
+}
+
+.card-subtitle {
+    font-size: 16px;
+    font-weight: 400; /* Regular */
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 15px;text-overflow: ellipsis;
+}
+
+.status-tag {
+    display: inline-block;
+    background-color: #f7a040; /* Matching the status bar orange */
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px; /* Pill shape */
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: capitalize; /* Capitalize the first letter */
+}
+
+.card-description {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.card-dates {
+    border-top: 1px solid #eee; /* Separator for dates */
+    padding-top: 15px;
+}
+
+.date-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 8px; /* Spacing between date items */
+}
+
+.date-item:last-child {
+    margin-bottom: 0;
+}
+
+.date-item i {
+    margin-right: 8px;
+    color: #999; /* Icon color */
+}
